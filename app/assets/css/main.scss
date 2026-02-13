@@ -1,0 +1,18 @@
+@use 'typography';
+@use 'buttons';
+:root {
+    --font-main: 'Roboto', sans-serif;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+.container{
+    max-width: 1364px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+*{
+    box-sizing: border-box;
+}

@@ -1,0 +1,53 @@
+body {
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  color: #062740;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  margin: 32px 0;
+}
+
+h2{
+  color: #062740;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  position: relative;
+  margin: 48px 0;
+  &.custom-headline{
+    padding-top: 12px;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 2px;
+      background: #01AAD5;
+    }
+  }
+}
+
+h3{
+  color: #062740;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%;
+  margin: 0 0 24px 0;
+}
+h4{
+  color: #062740;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%;
+  margin: 0 0 24px 0;
+}
