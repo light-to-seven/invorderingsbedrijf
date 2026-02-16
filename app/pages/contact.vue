@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppPromoSection from "~/components/shared/AppPromoSection.vue";
 import SectionOffices from "~/components/contact/SectionOffices/index.vue";
-import SectionForm from "~/components/contact/SectionForm.vue";
+import SectionConsultation from "~/components/contact/SectionConsultation/index.vue";
 import SectionInfo from "~/components/contact/SectionInfo.vue";
 import SectionSomething from "~/components/contact/SectionSomething.vue";
 import WidgetInfo from "~/components/contact/WidgetInfo/WidgetInfo.vue";
@@ -94,7 +94,7 @@ const widgetData:IWidgetInfo = {
             <p><b>At Invorderingsbedrijf, your question is central.</b> You can reach us by phone, email, or via our chat. We are available on working days from <b>08:30 to 17:00</b> (with the exception of public holidays). We are happy to help you.</p>
           </div>
           <SectionOffices :title="dataOffices.title" :description="dataOffices.description"/>
-          <SectionForm/>
+          <SectionConsultation/>
           <SectionSomething :title="titleSomething" :data="listSomething"/>
           <SectionInfo :title="titleInfo" :data="listInfo"/>
           <AppShare />
@@ -115,10 +115,21 @@ const widgetData:IWidgetInfo = {
     font-weight: 400;
     line-height: 150%;
     margin: 96px 0;
+    @media (max-width: 1100px) {
+      margin: 48px 0;
+    }
   }
   .column-row{
     display: grid;
     gap: 48px;
     grid-template-columns: 4fr 1.5fr;
+    @media (max-width: 1450px) {
+      gap: 24px;
+      grid-template-columns: 3fr 1.2fr;
+    }
+    @media (max-width: 1100px) {
+      gap: 24px;
+      grid-template-columns: 1fr;
+    }
   }
 </style>

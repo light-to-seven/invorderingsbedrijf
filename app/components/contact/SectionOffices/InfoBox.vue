@@ -18,6 +18,16 @@ import Button from "~/components/ui/Button.vue";
   display: flex;
   align-items: center;
   gap: 48px;
+  @media (max-width: 1100px) {
+    padding: 24px;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin: 48px -16px;
+    border-radius: 0;
+    padding: 48px 16px;
+    gap: 24px;
+  }
   &__description{
     color: #062740;
     font-size: 18px;
@@ -27,6 +37,11 @@ import Button from "~/components/ui/Button.vue";
     a{
       color: #01AAD5;
       text-decoration: none;
+    }
+  }
+  .btn{
+    @media (max-width: 767px) {
+      width: 100%;
     }
   }
 }

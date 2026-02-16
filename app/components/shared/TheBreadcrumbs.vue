@@ -24,6 +24,9 @@ const breadcrumbs = [
 <style lang="scss" scoped>
   .breadcrumbs{
     padding: 24px 0;
+    @media (max-width: 767px) {
+      padding: 16px 0;
+    }
     nav{
       ol{
         display: flex;

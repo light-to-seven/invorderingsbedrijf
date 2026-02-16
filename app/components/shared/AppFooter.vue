@@ -1130,7 +1130,7 @@
 
 @media (max-width: 1450px) {
         .sticky-center-line {
-            display: block!important;
+            //display: block!important;
             
             .inner-center-line {
                 .center-line-right {

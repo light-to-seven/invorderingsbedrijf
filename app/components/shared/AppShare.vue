@@ -39,7 +39,10 @@ const social:ISocialItem[] = [
 
 <style lang="scss" scoped>
 .section-share{
-  margin: 96px 0  ;
+  margin: 96px 0;
+  @media (max-width: 1100px) {
+    margin: 48px 0;
+  }
   &__title{
     margin-bottom: 16px;
     color: #062740;

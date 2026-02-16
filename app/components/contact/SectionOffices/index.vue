@@ -14,11 +14,17 @@ const offices = [
     title: 'The Hague (Den Haag)',
     address: 'Kruisstraat 123, 2511 AB The Hague',
     img: '~/assets/image/office-1.png',
+    phone: '070 - 762 0330',
+    mail: 'info@invorderingsbedrijf.nl',
+    maps: '/',
   },
   {
     title: 'Amsterdam',
     address: 'Keizersgracht 241, 1016 EA Amsterdam',
     img: '~/assets/image/office-2.png',
+    phone: '070 - 762 0330',
+    mail: 'info@invorderingsbedrijf.nl',
+    maps: '/',
   }
 ]
 </script>
@@ -33,6 +39,9 @@ const offices = [
           :key="office.title"
           :title="office.title"
           :address="office.address"
+          :phone="office.phone"
+          :mail="office.mail"
+          :maps="office.maps"
       />
     </div>
   </div>
@@ -40,6 +49,9 @@ const offices = [
 <style lang="scss" scoped>
 .section-offices{
   margin: 96px 0;
+  @media (max-width: 1100px) {
+    margin: 48px 0;
+  }
   &__descrioption{
     color: #586374;
     font-size: 16px;
@@ -52,6 +64,10 @@ const offices = [
     display: grid;
     gap: 32px;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
   }
 }
 </style>

@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import {computed, defineProps} from 'vue'
 
 interface IProps {
   title?: string,
   address?: string,
   img?: string,
+  phone?: string,
+  mail?: string,
+  maps?: string,
 }
 const props = defineProps<IProps>()
+const cleanPhone = computed(() => {
+  return props.phone?.replace(/[^\d+]/g, '')
+})
 </script>
 
 <template>
@@ -15,21 +21,21 @@ const props = defineProps<IProps>()
       <img src="~/assets/image/office-1.png" :alt="props.title">
     </div>
     <div class="item-office__content">
-      <div class="item-office__title">{{ props.title }}</div>
-      <div class="item-office__address">{{ props.address }}</div>
-      <div class="item-office__phone">
-        <a href="tel:070 - 762 0330">
-          <Icon name="custom-icon:link-arrow"/>
-          070 - 762 0330
+      <div class="item-office__title" v-if="props.title">{{ props.title }}</div>
+      <div class="item-office__address" v-if="props.address">{{ props.address }}</div>
+      <div class="item-office__phone" v-if="props.phone">
+        <a :href="`tel:${cleanPhone}`">
+          <Icon name="custom-icon:phone-mini"/>
+          {{ props.phone }}
         </a>
       </div>
-      <div class="item-office__mail">
-        <a href="mailto:info@invorderingsbedrijf.nl">
-          <Icon name="custom-icon:link-arrow"/>
-          info@invorderingsbedrijf.nl
+      <div class="item-office__mail" v-if="props.mail">
+        <a :href="`mailto:${props.mail}`">
+          <Icon name="custom-icon:main-mini"/>
+          {{ props.mail }}
         </a></div>
-      <div class="item-office__mapLink">
-        <a href="#" target="_blank">
+      <div class="item-office__mapLink" v-if="props.maps">
+        <a :href="maps" target="_blank">
           Google Maps
           <Icon name="custom-icon:link-arrow"/>
         </a>
@@ -54,6 +60,9 @@ const props = defineProps<IProps>()
     }
     &__content{
       padding: 32px;
+      @media (max-width: 767px) {
+        padding: 24px;
+      }
     }
     &__title{
       color: #062740;
@@ -70,6 +79,71 @@ const props = defineProps<IProps>()
       font-weight: 400;
       line-height: 150%;
       margin-bottom: 12px;
+    }
+    &__phone{
+      margin-bottom: 12px;
+      a{
+        display: flex;
+        align-items: center;
+        color: #062740;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        text-decoration: none;
+        gap: 8px;
+        transition: all .3s ease;
+        &:hover{
+          color: #01AAD5;
+        }
+        svg{
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+    &__mail{
+      margin-bottom: 12px;
+      a{
+        display: flex;
+        align-items: center;
+        color: #062740;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        gap: 8px;
+        transition: all .3s ease;
+        &:hover{
+          color: #01AAD5;
+        }
+        svg{
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+    &__mapLink{
+      a{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #2977C9;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 150%;
+        text-decoration: none;
+        svg{
+          font-size: 20px;
+          transition: transform .3s ease;
+        }
+        &:hover{
+          svg{
+            transform: rotate(45deg);
+          }
+        }
+      }
     }
   }
 </style>

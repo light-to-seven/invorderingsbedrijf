@@ -24,6 +24,9 @@ const props = defineProps<IProps>()
 <style lang="scss" scoped>
   .section-info {
     margin: 96px 0;
+    @media (max-width: 1100px) {
+      margin: 48px 0;
+    }
     &__list{
       display: flex;
       flex-direction: column;

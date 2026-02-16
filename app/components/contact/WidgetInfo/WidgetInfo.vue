@@ -39,6 +39,9 @@ const cleanPhone = computed(() => {
   margin: 96px 0;
   position: sticky;
   top: 130px;
+  @media (max-width: 1100px) {
+    margin: 0 0 48px;
+  }
   ul{
     gap: 15px;
     display: flex;

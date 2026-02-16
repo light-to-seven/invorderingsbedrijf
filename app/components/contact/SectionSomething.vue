@@ -35,10 +35,19 @@ const props = defineProps<{
 <style lang="scss" scoped>
   .section-something {
     margin: 96px 0;
+    @media (max-width: 1100px) {
+      margin: 48px 0;
+    }
     &__list{
       display: grid;
       gap: 32px;
       grid-template-columns: 1fr 1fr 1fr;
+      @media (max-width: 1100px) {
+        gap: 24px;
+      }
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
       .item{
         padding: 32px;
         border-radius: 8px;
@@ -46,6 +55,12 @@ const props = defineProps<{
         display: flex;
         flex-direction: column;
         height: 295px;
+        @media (max-width: 1100px) {
+          padding: 24px;
+        }
+        @media (max-width: 767px) {
+          height: 280px;
+        }
         .icon{
           margin-bottom: 25px;
           font-size: 48px;
@@ -77,6 +92,15 @@ const props = defineProps<{
           font-weight: 800;
           line-height: 150%;
           text-decoration: none;
+          svg{
+            font-size: 20px;
+            transition: transform .3s ease;
+          }
+          &:hover{
+            svg{
+              transform: rotate(45deg);
+            }
+          }
         }
       }
     }

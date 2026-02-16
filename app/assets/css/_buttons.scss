@@ -15,4 +15,10 @@
   &:hover{
     background: #0C2043;
   }
+  &.btn-secondary{
+    background: #0C2043;
+    &:hover{
+      background: #01AAD5;
+    }
+  }
 }
