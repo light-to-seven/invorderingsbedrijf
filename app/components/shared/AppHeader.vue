@@ -86,7 +86,7 @@
             <div class="inner-bottom-line">
                 <div class="bottom-line-left">
                     <a href="/public" class="logo">
-<!--                        <img src="~/assets/images/logo.svg" alt="Logo">-->
+                        <img src="~/assets/image/logo.svg" alt="Logo">
                     </a>
                 </div>
                 <div class="bottom-line-right">
@@ -143,7 +143,7 @@
         </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
     .top-line {
         padding: 8px 0;
@@ -184,6 +184,7 @@
 
                 a {
                     text-decoration: none;
+                    color: #FFFFFF;
 
                     span {
                         font-family: 'Roboto';
@@ -248,7 +249,6 @@
                     border-radius: 4px;
                     border: 1px solid #3086E2;
                     background-color: #3086E2;
-                    font-family: Roboto;
                     font-weight: 800;
                     font-size: 14px;
                     color: #FFFFFF;
@@ -366,7 +366,7 @@
                         max-width: 100%;
                     }
 
-                    &&::before {
+                    &::before {
                         content: '';
                         display: block;
                         width: 71px;
@@ -673,7 +673,7 @@
                     .logo {
                         margin-top: 0;
 
-                        &&::before {
+                        &::before {
                             display: none;
                         }
                     }

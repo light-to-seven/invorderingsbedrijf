@@ -717,7 +717,7 @@
         </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .footer {
     background-color: #062740;
 
@@ -877,7 +877,6 @@
                 }
 
                 .block-title {
-                    font-family: 'Roboto';
                     font-weight: 800;
                     font-size: 16px;
                     color: #FFFFFF;
